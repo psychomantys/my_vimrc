@@ -58,15 +58,15 @@ map <F6> :runtime! syntax/2html.vim<CR>
 
 " Personalização do plugin vcscommand
 " Set <F5> to commit
-imap <F5> <LEADER>cc<CR>
-map <F5> <LEADER>cc<CR>
+"imap <F5> <LEADER>cc<CR>
+"map <F5> <LEADER>cc<CR>
 
 " Cria documenta??o de uma fun??o para o doxygen
 imap <F12> <ESC>:Dox<CR>
 map  <F12> :Dox<CR>
 
 " Tecla que posta num site o arquivo atual e retorna a url do site
-map  <F11> :Lodgeit<CR>
+map  <F11> :Gist<CR>
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -84,36 +84,15 @@ highlight   PmenuThumb          ctermfg=Cyan   	 ctermbg=yellow        gui=NONE 
 
 let g:gccsenseUseOmniFunc = 1
 
-function! SuperCleverTab()
-	if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-		return "\<Tab>"
-	else
-		if &omnifunc != ''
-			return "\<C-X>\<C-O>"
-		elseif &dictionary != ''
-			return "\<C-K>"
-		else
-			return "\<C-N>"
-		endif
-	endif
-endfunction
+" GIST plugin: if you want to detect filetype from filename...
+let g:gist_detect_filetype = 1
 
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+" Autocomplete with tab
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
-" Next tab
-imap <C-TAB> <ESC>:tabnext<CR>
-map  <C-TAB> :tabnext<CR>
-" Previous tab
-"imap <C-Left> <ESC>:tabprevious<CR>
-"map  <C-Left> :tabprevious<CR>
-" Close tab
-imap <C-w> <ESC>:tabclose<CR>
-map  <c-w> :tabclose<CR>
-
-" Ctrl+v paste
-imap <C-v> <ESC>]pi<Right>
-" Ctrl+c copy
-vmap <C-c> "+y
-" Ctrl+x cut
-vmap <C-x> "+x
+" Meu Ommin. Uso o omni apenas para completar :, . e ->
+" Deu trabalho, mas copiei tudo para um arquivo.
+let g:OmniCpp_MayCompleteDot = 1
+let g:OmniCpp_MayCompleteArrow = 1
+let g:OmniCpp_MayCompleteScope = 1
 
