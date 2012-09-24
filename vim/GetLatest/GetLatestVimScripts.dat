@@ -1,0 +1,18 @@
+ScriptID SourceID Filename
+--------------------------
+1658	17123	NERDTree
+642	15781	GetLatestVimScripts
+465	4580	vimspell.vim
+2423	18558	Gist, paste bin from git
+4019	17780	webapi-vim
+213	18444	csupport
+2353	9160	STL reference doc
+31	7218	Alternate source and header files
+90	17031	VCS integration plugin
+3872 18525 vimprj
+2715 18527 UltiSnips
+1643 18075 SuperTab
+3599 18602 Auto Pairs
+89 261 Saververs, Automatically save and diff multiple, sequentially numbered revisions
+987 14064 Doxygen
+
