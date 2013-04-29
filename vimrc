@@ -1,3 +1,7 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+execute pathogen#infect()
+
 " Ativa a cor
 syntax on
 
@@ -96,3 +100,12 @@ let g:OmniCpp_MayCompleteDot = 1
 let g:OmniCpp_MayCompleteArrow = 1
 let g:OmniCpp_MayCompleteScope = 1
 
+"if !exists("local_autocommands_loaded")
+"	let local_autocommands_loaded = 1
+autocmd FileType c,C,c++,cpp setlocal nu
+autocmd FileType c,C,c++,cpp setlocal ts=8
+"endif
+
+
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
